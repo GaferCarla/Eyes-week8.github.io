@@ -1,36 +1,124 @@
-<!doctype html>
-<html lang="es">
-  <head>
+<html>
+  <head> 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <title>Moving eyes</title>
 
-    <title>Repositorio semana 1</title>
-  </head>
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css">
 
-  <body>
-      <div class="row">
-          <div class="col-12 col-md-6 p-5">
-              <div class="col-md-3 text-center col-12 float-md-start">
-                <img src="./Carla_infb.png" class="rounded " style="min-height: 88px; min-width: 104px; max-height: 135px; max-width: 160px;"></img>
 
-              </div>
-              <div class="col-md-9 float-md-end col-12 text-center align-middle py-4">
-                <h1 >Gafer's Portafolio</h1>
-                <hr>
-              </div>
+    <!-- FONT-AWESOME -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://use.fontawesome.com/releases/v5.7.2/css/all.css' rel='stylesheet'>
 
+    <!-- jquery                                 -->
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+
+
+
+</head>
+  
+  <body >
+
+    <div class="container d-flex justify-content-center px-4">
+      <div class="row w-100 my-5">
+        <div class="col-12 col-sm-6">
+          <div class="p-4 rounded-3 bg-white">
+            <h1 class="fw-bold mb-3">Make your avatar</h4>
+              <ol>
+                <li class="mb-3">                
+                  <label class="w-100">Choose the avatar that most resembles you width the arrow</label>
+                </li>
+                <li class="mb-3">
+                  <label class="w-100 mb-3">Choose your eye color</label>
+                  <button onclick= changeColor(this.id) class="btn p-3 rounded-circle text-white fw-bold my-2" style="background-color: blue;" id="cornflowerblue"></button>
+                  <button onclick= changeColor(this.id) class="btn p-3 rounded-circle text-white fw-bold my-2" style="background-color: green;" id="mediumseagreen"></button>
+                  <button onclick= changeColor(this.id) class="btn p-3 rounded-circle text-white fw-bold my-2" style="background-color: #804000;" id="#804000"></button>
+                  <button onclick= changeColor(this.id) class="btn p-3 rounded-circle text-white fw-bold my-2" style="background-color: gray;" id="gray"></button>
+            
+                </li>
+                <li class="mb-3">
+                  <label class="w-100 mb-3">Choose your background color</label>
+                  <button onclick= changeBack(this.id) class="btn p-3 rounded-circle text-white fw-bold my-2" style="background-color: #000000;" id="#000000"></button>
+                  <button onclick= changeBack(this.id) class="btn p-3 rounded-circle text-white fw-bold my-2" style="background-color: #e1c25c;" id="#e1c25c"></button>
+                  <button onclick= changeBack(this.id) class="btn p-3 rounded-circle text-white fw-bold my-2" style="background-color: #804000;" id="#5b3a29"></button>
+                  <button onclick= changeBack(this.id) class="btn p-3 rounded-circle text-white fw-bold my-2" style="background-color: #892e19;" id="#892e19"></button>
+                  <button onclick= changeBack(this.id) class="btn p-3 rounded-circle text-white fw-bold my-2" style="background-color: blue;" id="cornflowerblue"></button>
+                  <button onclick= changeBack(this.id) class="btn p-3 rounded-circle text-white fw-bold my-2" style="background-color: green;" id="mediumseagreen"></button>
+                  <button onclick= changeBack(this.id) class="btn p-3 rounded-circle text-white fw-bold my-2" style="background-color: pink;" id="pink"></button>
+                  <button onclick= changeBack(this.id) class="btn p-3 rounded-circle text-white fw-bold my-2" style="background-color: gray;" id="gray"></button>
+                </li>
+                <li class="mb-3">
+                  <label class="w-100 mb-3">Choose your hair color <smal class="ms-2 text-danger">*at the moment this function is disabled</smal></label>
+                  <button onclick= changeHair(this.id) class="btn p-3 rounded-circle text-white fw-bold my-2" style="background-color: #000000;" id="#000000"></button>
+                  <button onclick= changeHair(this.id) class="btn p-3 rounded-circle text-white fw-bold my-2" style="background-color: #e1c25c;" id="#e1c25c"></button>
+                  <button onclick= changeHair(this.id) class="btn p-3 rounded-circle text-white fw-bold my-2" style="background-color: #804000;" id="#5b3a29"></button>
+                  <button onclick= changeHair(this.id) class="btn p-3 rounded-circle text-white fw-bold my-2" style="background-color: #892e19;" id="#892e19"></button>
+            
+                </li>
+          </ol>
           </div>
-          <div class="col-12 col-md-6 ">
-            <img src="./image.jpeg" class="align-middle img-fluid"></img>
+        </div>
+
+        <div class="col-12 col-sm-6 clearfix">
+
+          <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="true">
+            <div id="face">
+              <div class="eyes">
+                <div class="left-eye">
+                  <div class="ball" id="left-pupil-and-iris"></div>
+                </div>
+                <div class="right-eye">
+                  <div class="ball" id="right-pupil-and-iris"></div>
+                </div>
+              </div>
+              <div class="mouth">
+              </div>
+            </div>
+            <div class="carousel-inner" id="back">
+              <div class="carousel-item active">
+                <img src="images/1.svg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="images/2.svg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="images/3.svg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="images/4.svg" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon " aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next " type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
           </div>
+
+        </div>
+
+        
+
 
       </div>
-    
-    
-  </body>
-  <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 
+    </div>
+
+
+  </body>
+
+  <script src="script/eyes.js"></script>
+  <script>
+    
+  </script>
+  <!-- : Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </html>

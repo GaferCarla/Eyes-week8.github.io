@@ -1,0 +1,137 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #14495e;
+
+}
+
+
+.carousel-control-next, .carousel-control-prev, .carousel-control-next:focus, .carousel-control-next:hover, .carousel-control-prev:focus, .carousel-control-prev:hover {
+
+  color: #031922 !important;
+  z-index: 40;
+
+
+
+}
+
+#back {
+  background-color: #031922;
+  border-radius: 50% !important;
+
+}
+
+.eyes {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  text-align: center;
+  padding: 0px;
+  z-index: 20;
+}
+.left-eye {
+  grid-column: 3 / 4;
+  width: 100%;
+  height: 40px;
+  background: #fff;
+  display: inline-block;
+  margin: 40px;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border-top: #000 solid 5px;
+  border-bottom: #000 solid 2px;
+  
+}
+.right-eye {
+  grid-column: 5 / 6;
+  width: 100%;
+  height: 40px;
+  background: #fff;
+  display: inline-block;
+  margin: 40px 20px;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border-top: #000 solid 5px;
+  border-bottom: #000 solid 2px;
+}
+
+.ball {
+  width: 10%;
+  height: auto;
+  background: #000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-width: 30px;
+  transform: translate(-50%, -50%);
+  border-color:cornflowerblue;
+  border-style:solid;
+  border-radius: 50%;
+
+}
+
+.mouth {
+  border: 2px solid rgb(12, 2, 2);
+  background-color: white;
+  position: absolute;
+  top:57%;
+  left: 45%;
+  z-index: 500;
+  width: 10%;
+  height: 20px;
+  border-radius: 50%;
+  animation: 4s infinite lips;
+}
+
+
+@keyframes lips {
+  15% {
+    left: 48%;
+    width: 4%;
+    height: 30px;
+  }
+
+  30% {
+    left: 44%;
+    width: 12%;
+    height: 10px;
+  }
+
+  40% {
+    left: 46%;
+    width: 8%;
+    height: 5px;
+  }
+
+  50% {
+    left: 46%;
+    width: 8%;
+    height: 15px;
+  }
+
+  65% {
+    left: 46%;
+    width: 8%;
+    height: 5px;
+  }
+
+
+  80% {
+    left: 44%;
+    width: 12%;
+    height: 10px;
+  }
+
+
+  100% {
+    left: 48%;
+    width: 4%;
+    height: 30px;
+  }
+}
+
+
